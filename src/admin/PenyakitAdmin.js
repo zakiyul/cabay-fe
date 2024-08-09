@@ -4,7 +4,6 @@ import FooterComp from '../admin_components/FooterComp';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPlusCircle} from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 import PenyakitTable from '../admin_components/PenyakitTable';
 import { useEffect, useState } from 'react';
 import axios from 'axios';

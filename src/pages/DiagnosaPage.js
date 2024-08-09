@@ -137,7 +137,7 @@ const DiagnosaPage = () => {
     }
     const handleSubmit = e => {
         e.preventDefault();
-        if(namaUser == undefined){
+        if(namaUser === undefined){
             Swal.fire({
                 title: "Isi Nama!",
                 text: "Silahkan isi nama terlebih dahulu",

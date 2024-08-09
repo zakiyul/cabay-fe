@@ -19,7 +19,7 @@ const TopBar = ({handleToggle}) => {
                     <li className="nav-item dropdown no-arrow">
                         <a
                             className="nav-link dropdown-toggle"
-                            href="#"
+                            href
                             id="userDropdown"
                             role="button"
                             data-toggle="dropdown"

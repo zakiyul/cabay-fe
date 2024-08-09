@@ -45,14 +45,12 @@ const HasilPage = () => {
     const navigate = useNavigate();
     const [value, setValue] = React.useState(0);
     const [open, setOpen] = React.useState(false);
-    const [openModal, setOpenModal] = React.useState(false);
     const [hasilCf, setHasilCf] = React.useState([]);
     const [hasilCbr, setHasilCbr] = React.useState([]);
-    // const [maxCf, setMaxCf] = React.useState({});
-    // const [maxCbr, setMaxCbr] = React.useState({});
 
     const toggleDrawer = (newOpen) => () => {
         setOpen(newOpen);
+        console.log(open)
     };
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -60,9 +58,6 @@ const HasilPage = () => {
     const getResult = () => {
         setHasilCf(JSON.parse(localStorage.getItem('hasil_cf')));
         setHasilCbr(JSON.parse(localStorage.getItem('hasil_cbr')));
-        // const nilaiTertinggiCbr = hasilCbr && hasilCbr.reduce((max,obj) => (obj.score > max.score ? obj : max), hasilCbr[0]);
-        // const nilaiTertinggiCf = hasilCf && hasilCf.reduce((max,obj) => (obj.score > max.score ? obj : max), hasilCf[0]);
-        // setMaxCf(nilaiTertinggiCf);
     }
 
     React.useEffect(() => {
@@ -71,6 +66,7 @@ const HasilPage = () => {
     return (
         <>
             <AppbarComp toggleDrawer={toggleDrawer}/>
+            <DrawerComp open={open} toggleDrawer={toggleDrawer} />
             <Box sx={{ marginTop:10 }}>
                 <Container>
                     <h5>Hasil Diagnosa</h5>

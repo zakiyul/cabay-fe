@@ -6,7 +6,6 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import BugReport from '@mui/icons-material/BugReport';
 import ListAlt  from '@mui/icons-material/ListAlt';
 import LoginIcon from '@mui/icons-material/Login';
 import Logo from '../assets/logo/logo.png';
@@ -54,7 +53,7 @@ export default function DrawerComp({open, toggleDrawer}) {
                 </ListItem>
                 <Divider/>
                 <ListItem disablePadding>
-                    {login == true ? <ListItemButton onClick={_ => navigate('/dashboard')}>
+                    {login === true ? <ListItemButton onClick={_ => navigate('/dashboard')}>
                         <ListItemIcon>
                             <LoginIcon />
                             {/* <ListAlt /> */}

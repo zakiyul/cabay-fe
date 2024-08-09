@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { FaEdit,FaTrash } from "react-icons/fa";
+
+import { FaTrash } from "react-icons/fa";
 
 export default function RiwayatTable({dataList, handleDelete}) {
     return (
