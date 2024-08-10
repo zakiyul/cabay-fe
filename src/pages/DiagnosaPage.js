@@ -22,15 +22,15 @@ const rumusCBR = (penyakits, basisPengetahuan, realData) => {
         let s = 0
 
         for (let idx_bp = 0; idx_bp < basisPengetahuan.length; idx_bp++) {
-            if(basisPengetahuan[idx_bp].kode_penyakit === penyakits[idx_penyakit].id){
+            if(basisPengetahuan[idx_bp].kode_penyakit == penyakits[idx_penyakit].id){
                 w.push(basisPengetahuan[idx_bp].bobot)
             }
         }
 
         for (let idx_kb = 0; idx_kb < realData.length; idx_kb++) {
             for (let idx_bp = 0; idx_bp < basisPengetahuan.length; idx_bp++) {
-                if(basisPengetahuan[idx_bp].kode_penyakit === penyakits[idx_penyakit].id){
-                    if(realData[idx_kb] === basisPengetahuan[idx_bp].kode_gejala){
+                if(basisPengetahuan[idx_bp].kode_penyakit == penyakits[idx_penyakit].id){
+                    if(realData[idx_kb] == basisPengetahuan[idx_bp].kode_gejala){
                         const hitung = 1 * basisPengetahuan[idx_bp].bobot;
                         s = s + hitung
                     }
@@ -58,7 +58,7 @@ function hitungCf(gejalas) {
         }
 
         return cf_old;
-    } else if(gejalas.length === 1) {
+    } else if(gejalas.length == 1) {
         const hasil = gejalas[0].pakar *gejalas[0].user;
         return hasil;
     } else {
@@ -73,7 +73,7 @@ function rumusCf(penyakits, basisPengetahuan, kasusBaru) {
         const gejala_counted = []
 
         for (let j = 0; j < basisPengetahuan.length; j++) {
-            if (penyakits[i].id === basisPengetahuan[j].kode_penyakit) {
+            if (penyakits[i].id == basisPengetahuan[j].kode_penyakit) {
                 current_penyakit.push(basisPengetahuan[j]);
             }
         }
@@ -85,7 +85,7 @@ function rumusCf(penyakits, basisPengetahuan, kasusBaru) {
 
         for (let cp = 0; cp < current_penyakit.length; cp++) {
             for (let gfu = 0; gfu < kasusBaru.length; gfu++) {
-                if (current_penyakit[cp].kode_gejala === kasusBaru[gfu].id_gejala) {
+                if (current_penyakit[cp].kode_gejala == kasusBaru[gfu].id_gejala) {
                     // console.log({...current_penyakit[cp],user:Number(kasusBaru[gfu].nilai)})
                     // gejala_counted.push(current_penyakit[cp])
                     gejala_counted.push({...current_penyakit[cp],user:Number(kasusBaru[gfu].nilai)})
@@ -137,7 +137,7 @@ const DiagnosaPage = () => {
     }
     const handleSubmit = e => {
         e.preventDefault();
-        if(namaUser === undefined){
+        if(namaUser == undefined){
             Swal.fire({
                 title: "Isi Nama!",
                 text: "Silahkan isi nama terlebih dahulu",
